@@ -1,0 +1,19 @@
+name: Run C++ Code
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Compile C++ program
+      run: g++ blank.cpp -o blank
+
+    - name: Run program
+      run: ./blank
