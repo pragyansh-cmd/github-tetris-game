@@ -1,19 +1,16 @@
-name: Run C++ Code
+name: Build Tetris Game
 
-on:
-  push:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
-    - name: Compile C++ program
-      run: g++ blank.cpp -o blank
+    - name: Compile
+      run: g++ tetris.cpp -o tetris
 
-    - name: Run program
-      run: ./blank
+    - name: Run
+      run: ./tetris
